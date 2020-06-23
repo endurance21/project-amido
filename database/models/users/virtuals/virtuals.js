@@ -1,23 +1,10 @@
-import uuid from 'uuid'
+import {v1 as uuid} from 'uuid'
 import crypto from 'crypto'
 
 function addVirtual(Schema,name){
-
     Schema.virtual(name)
     .set(set)
     .get(get)
-
-
-    function set(password){
-        this.password = password
-        this.salt = uuid()
-        this.hashedPassword = this.encryptedPassword(password)
-    }
-
-    function get(){
-        return this._password
-    }
-
 
     Schema.methods = {
         encryptedPassword(password){
@@ -29,5 +16,13 @@ function addVirtual(Schema,name){
     }
 
 }
+function get(){
+    return this._password
+}
 
+function set(password){
+    this._password = password
+    this.salt = uuid()
+    this.hashedPassword = this.encryptedPassword(password)
+}
 export default addVirtual

@@ -4,6 +4,7 @@ import dotenv from 'dotenv'
 import bodypParser from 'body-parser'
 import cookieParser from 'cookie-parser'
 import morgan from 'morgan'
+import signUpRouter from './routes/auth/signUp/index.js'
 
 
 
@@ -18,6 +19,8 @@ app.use(bodypParser.json())
 app.use(cookieParser())
 
 app.use(morgan('dev'))
+
+app.use(signUpRouter)
 
 
 

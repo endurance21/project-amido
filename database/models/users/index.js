@@ -1,4 +1,4 @@
-import mongoose from 'mongoose'
+import mongoose from '../../connect.js'
 import addVirtual from './virtuals/virtuals.js'
 
 const Schema = mongoose.Schema
@@ -17,7 +17,7 @@ const User = new Schema({
         required:true,
         unique:32
     },
-    salt:string,
+    salt:String,
     role:{
         type:Number,
         defalt:0
