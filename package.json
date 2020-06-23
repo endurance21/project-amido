@@ -1,10 +1,12 @@
 {
+  "type" :"module",
   "name": "project-amido",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "npm start "
+    "test": "npm start ",
+    "pre":"node -r dotenv/config.js dotenv_config_path=.env "
   },
   "repository": {
     "type": "git",
@@ -22,6 +24,7 @@
   "dependencies": {
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "mongoose": "^5.9.20",
     "nodemon": "^2.0.4"
   }
 }

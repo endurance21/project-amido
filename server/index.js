@@ -1,15 +1,15 @@
+import path from 'path'
 import  express  from 'express'
 import dotenv from 'dotenv'
-dotenv.config({path:"../.env"})
+
+const __dirname = path.resolve() // why __dirname is not working 
+dotenv.config({path:path.resolve(__dirname , '.env')}) 
+const port  = process.env.PORT
 
 const app = express()
 
-const port  = process.env.PORT
 
-app.get('/', (req, res)=>res.send('hello'))
-app.post('/auth',(req, res)=>{res.send('bonjour')})
-app.get('/submit',(req, res)=>{res.send('lol')})
-app.get('/fetch',(req,res)=>{res.send('ee ehe e he heh e')})
+
 
 
 app.listen(port, ()=> console.log("listenig at" + port))
