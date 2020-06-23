@@ -18,3 +18,5 @@ mongoose.connect(
   mongoose.connection.on('error', err => {
     console.log(`DB connection error: ${err.message}`)
   });
+
+  export default mongoose
