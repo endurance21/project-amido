@@ -1,11 +1,15 @@
 import User from '../../../../database/models/users/index.js'
+import DbErrorHandler from  '../../../helpers/errorHandlers/database/index.js'
 
 function signUp(req, res){
+    
     const user  = new User(req.body)
     user.save((err, user)=>{
         if(err){
+            let errorMessage = DbErrorHandler(err)
+            console.log(errorMessage)
             return res.status(400).json({
-                err
+                errorMessage : errorMessage
             })
         }
         res.json({
@@ -15,3 +19,4 @@ function signUp(req, res){
 }
 
 export default signUp
+
