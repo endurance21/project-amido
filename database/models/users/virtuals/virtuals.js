@@ -7,6 +7,9 @@ function addVirtual(Schema,name){
     .get(get)
 
     Schema.methods = {
+        authenticate(password) {
+            return this.encryptedPassword(password) === this.hashedPassword;
+        },
         encryptedPassword(password){
             if(password){
                 return crypto.createHmac('sha1',this.salt).update(password).digest('hex')
