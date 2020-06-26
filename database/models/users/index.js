@@ -17,10 +17,14 @@ const User = new Schema({
         required:true,
         unique:32
     },
+    hashedPassword:{
+        type:String,
+        required:true
+    },
     salt:String,
     role:{
         type:Number,
-        defalt:0
+        default:0
     },
     history:{
         type:Array,
