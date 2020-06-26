@@ -7,6 +7,7 @@ import morgan from 'morgan'
 import signUpRouter from './routes/auth/signUp/index.js'
 import signInrouter from './routes/auth/signIn/index.js'
 import ExpressValidator from 'express-validator'
+import signOutRouter from './controllers/auth/signOut/index.js'
 
 
 
@@ -24,6 +25,7 @@ app.use(morgan('dev'))
 app.use(ExpressValidator())  //validations of input by user , for example email validations and non-empty password validationss
 app.use(signUpRouter)
 app.use(signInrouter)
+app.use(signOutRouter)
 
 
 
