@@ -1,3 +1,2 @@
 # project-amido
-
-An ecommerce website for RK_INDUSTRIES
+BACKEND  for E-COMMERCE @RK_INDUSTRIES
